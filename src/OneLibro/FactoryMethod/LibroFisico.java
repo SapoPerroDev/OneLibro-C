@@ -4,6 +4,7 @@ import java.util.Scanner;
 
 public class LibroFisico implements Libro_Interface {
     
+    //Atributos
     private String titulo;
     private String isbn;
     private String sinopsis;

@@ -4,6 +4,7 @@ import java.util.Scanner;
 
 public class AudioLibro implements Libro_Interface {
 
+    //Atributos
     private String titulo;
     private String isbn;
     private String sinopsis;

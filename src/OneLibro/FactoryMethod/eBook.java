@@ -4,6 +4,7 @@ import java.util.Scanner;
 
 public class eBook implements Libro_Interface {
     
+    //Atributos
     private String titulo;
     private String autor;
     private String formato;
