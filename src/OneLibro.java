@@ -10,7 +10,8 @@ public class OneLibro {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
         boolean continuar = true;
-
+        
+        //Bucle de selección de tipo de usuario
         while (continuar) {
             Usuario usuario = Login.iniciarSesion();
 
