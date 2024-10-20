@@ -4,6 +4,7 @@
     "java.project.referencedLibraries": [
         "lib/**/*.jar"
     ],
+
     "netbeans.jdkhome": "c:\\Program Files\\Java\\jdk-21",
     "netbeans.project.jdkhome": "c:\\Program Files\\Java\\jdk-21",
     "java.jdt.ls.java.home": "c:\\Program Files\\Java\\jdk-21",
@@ -15,6 +16,10 @@
         {
             "name": "JavaSE-21",
             "path": "c:\\Program Files\\Java\\jdk-21"
+        },
+        {
+            "name": "JavaSE-17",
+            "path": "c:\\Program Files\\Java\\jdk-17"
         }
     ],
     "terminal.integrated.env.windows": {

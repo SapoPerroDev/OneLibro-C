@@ -6,12 +6,6 @@ import java.io.IOException;
 
 public class Login{
 
-    private String email;
-    private String contrasena;
-
-    public void setContrasena(String contrasena) {this.contrasena = contrasena;}
-    public void setEmail(String email) {this.email = email;}
-
     public boolean verificarClienteExistente(String e_mail, String psw){
         AlmacenamientoCliente cliente = new AlmacenamientoCliente();
         boolean existe_cliente = false;
@@ -23,19 +17,13 @@ public class Login{
                 if(bloques.length == 16){
 
                     String email = bloques[7];
-                    String contrasena = bloques[2];
+                    String contrasena = bloques[8];
 
-                    if(email != e_mail){
-                        existe_cliente = false;
-                    }else{
-                        System.out.println("Email correcto");
+                    if(email.equals(e_mail) && contrasena.equals(psw)){
                         existe_cliente = true;
-                        if(contrasena != psw){
-                            existe_cliente = false;
-                        }else{
-                            System.out.println("contraseña correcta");
-                            existe_cliente = true;
-                        }
+                        break;
+                    }else{
+                        existe_cliente = false;
                     }
                 }
             }

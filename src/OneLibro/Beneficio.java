@@ -48,9 +48,9 @@ public class Beneficio {
         if (pais.equalsIgnoreCase("Chile") && departamento.equalsIgnoreCase("Santiago")) {
             return new Beneficio("Descuento de bienvenida", "Descuento", 10.0, "Solo para primeras compras", "2024-01-01", "2024-12-31", 10000);
         } else if (pais.equalsIgnoreCase("Colombia") && departamento.equalsIgnoreCase("Antioquia")) {
-            return new Beneficio("Envío gratuito", "Envío gratuito", 0.0, "Solo válido en productos seleccionados", "2024-01-01", "2024-12-31", 0);
+            return new Beneficio("Envio gratuito", "Envio gratuito", 0.0, "Solo valido en productos seleccionados", "2024-01-01", "2024-12-31", 0);
         } else {
-            return new Beneficio("Sin beneficio", "Ninguno", 0.0, "No se aplica ningún beneficio", "", "", 0);
+            return new Beneficio("Sin beneficio", "Ninguno", 0.0, "No se aplica ningun beneficio", "null", "null", 0);
         }
     }
 

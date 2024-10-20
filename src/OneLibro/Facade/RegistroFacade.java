@@ -40,9 +40,8 @@ public class RegistroFacade {
          Beneficio beneficios = new Beneficio();
 
         if (verificacion.validarEmail(email) && verificacion.validarContrasena(contrasena)) {
-            System.out.println("E-mail o contraseña invalidas. Por favor, digite nuevamente.");
             if(verificacion.verificarClienteExistente(dni, email )){
-                System.out.println("\nUsuario registrado:");
+                System.out.println("\n\nUsuario Cliente ya registrado: DNI o E-mail ya registrados. Corrija e intente nuevamente");
             }else{
                 // Generar beneficio basado en el país y departamento
                 Beneficio beneficio = beneficios.generarBeneficio(pais, departamento);
@@ -52,9 +51,11 @@ public class RegistroFacade {
                 
                 //almacena el cliente en un fichero
                 almacenamiento.almacenarClientes(cliente);
+                System.out.println("\n\n¡Usuario registrado con exito!");
             }
         } else {
             System.out.println("Error en los datos de registro.");
+            System.out.println("E-mail o contraseña invalidas. Por favor, digite nuevamente.");
         }
     }
 }

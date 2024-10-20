@@ -10,6 +10,7 @@ public class VerificacionClienteExistente {
     public boolean verificarClienteExistente(String d_n_i, String e_mail){
         AlmacenamientoCliente cliente = new AlmacenamientoCliente();
         boolean existe_cliente = false;
+
         try {
             BufferedReader lector = new BufferedReader(new FileReader(cliente.getDIRECCION_FICHERO_CLIENTE()));
             String linea = "";
@@ -20,18 +21,10 @@ public class VerificacionClienteExistente {
                     String email = bloques[7];
                     String dni = bloques[2];
 
-                    if(dni != d_n_i){
-                        //
-                    }else{
-                        System.out.println("El DNI ingresado ya está registrado");
+                    if(dni.equals(d_n_i) || email.equals(e_mail)){
                         existe_cliente = true;
-                    }
-
-                    if(email != e_mail){
-                        //
                     }else{
-                        System.out.println("El E-mail ingresado ya está registrado");
-                        existe_cliente = true;
+                        existe_cliente = false;
                     }
                 }
             }

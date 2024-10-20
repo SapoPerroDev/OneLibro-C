@@ -1,8 +1,7 @@
 //import java.util.ArrayList;
 import java.util.Scanner;
-
 import OneLibro.Login;
-import OneLibro.*;
+//import OneLibro.*;
 import OneLibro.Facade.RegistroFacade;
 //import OneLibro.FactoryMethod.*;
 
@@ -17,9 +16,9 @@ public class OneLibro {
     public static void menu() {
         Scanner input = new Scanner(System.in);
 
-        int opcion;
-            
-                System.out.println("***************************************************************" 
+        int opcion = 0;
+        do{
+            System.out.println("\n\n***************************************************************" 
                                 + "\n******************* Bienvid@ a OneLibro ***********************" 
                                 + "\n***************************************************************");
                 
@@ -44,57 +43,55 @@ public class OneLibro {
             case 1:
                 Login login = new Login();
 
-                System.out.println("Ingrese su email: ");
+                System.out.print("\nIngrese su email: ");
                     String emaill = input.next();
-                    login.setEmail(emaill);
 
-                System.out.println("Ingrese su contraseña: ");
+                System.out.print("Ingrese su contraseña: ");
                     String contrasenaa = input.next();
-                    login.setContrasena(contrasenaa);
 
                 if (login.verificarClienteExistente(emaill, contrasenaa)) {
-                    System.out.println("Inicio de sesión exitoso");
+                    System.out.println("\n¡Inicio de sesión exitoso!");
                 }else{
-                    System.out.println("Paila, no se pudo iniciar sesión");
+                    System.out.println("\nNo se logro iniciar sesión. Corrija el E-mail o la contraseña e intente nuevamente");
                 }
 
                 break;
             case 2:
                 RegistroFacade registro = new RegistroFacade();
 
-                System.out.println("Ingrese su nombre: ");
+                System.out.print("\nIngrese su nombre: ");
                     String nombre = input.next();
                     registro.setNombre(nombre);
 
-                System.out.println("Ingrese su apellido: ");
+                System.out.print("Ingrese su apellido: ");
                     String apellido = input.next();
                     registro.setApellidos(apellido);
 
-                System.out.println("Ingrese su DNI: ");
+                System.out.print("Ingrese su DNI: ");
                     String dni = input.next();
                     registro.setDni(dni);
 
-                System.out.println("Ingrese su edad: ");
+                System.out.print("Ingrese su edad: ");
                     int edad = input.nextInt();
                     registro.setEdad(edad);
 
-                System.out.println("Ingrese su telefono: ");
+                System.out.print("Ingrese su telefono: ");
                     String telefono = input.next();
                     registro.setTelefono(telefono);
 
-                System.out.println("Ingrese su país: ");
+                System.out.print("Ingrese su país: ");
                     String pais = input.next();
                     registro.setPais(pais);
 
-                System.out.println("Ingrese su departamento: ");
+                System.out.print("Ingrese su departamento: ");
                     String departamento = input.next();
                     registro.setDepartamento(departamento);
                 
-                System.out.println("Ingrese su email: ");
+                System.out.print("Ingrese su email: ");
                     String email = input.next();
                     registro.setEmail(email);
 
-                System.out.println("Ingrese su contraseña: ");
+                System.out.print("Ingrese su contraseña: ");
                     String contrasena = input.next();
                     registro.setContrasena(contrasena);
 
@@ -109,7 +106,8 @@ public class OneLibro {
                 System.out.println("\n\nOpcion Incorrecta. Inicie nuevamente el programa.\n");
                 break;
             }
-        }
+        }while(opcion != 3);          
+    }
 
         /*Scanner scanner = new Scanner(System.in);
         boolean continuar = true;
