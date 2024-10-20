@@ -1,11 +1,14 @@
-import java.util.ArrayList;
+//import java.util.ArrayList;
 import java.util.Scanner;
+
+import OneLibro.Login;
 import OneLibro.*;
-import OneLibro.FactoryMethod.*;
+import OneLibro.Facade.RegistroFacade;
+//import OneLibro.FactoryMethod.*;
 
 public class OneLibro {
 
-    private static ArrayList<Libro_Interface> librosDisponibles = new ArrayList<>();
+    //private static ArrayList<Libro_Interface> librosDisponibles = new ArrayList<>();
 
     public static void main(String[] args) {
         menu();
@@ -39,9 +42,64 @@ public class OneLibro {
                    
         switch (opcion) {
             case 1:
-                
+                Login login = new Login();
+
+                System.out.println("Ingrese su email: ");
+                    String emaill = input.next();
+                    login.setEmail(emaill);
+
+                System.out.println("Ingrese su contraseña: ");
+                    String contrasenaa = input.next();
+                    login.setContrasena(contrasenaa);
+
+                if (login.verificarClienteExistente(emaill, contrasenaa)) {
+                    System.out.println("Inicio de sesión exitoso");
+                }else{
+                    System.out.println("Paila, no se pudo iniciar sesión");
+                }
+
                 break;
             case 2:
+                RegistroFacade registro = new RegistroFacade();
+
+                System.out.println("Ingrese su nombre: ");
+                    String nombre = input.next();
+                    registro.setNombre(nombre);
+
+                System.out.println("Ingrese su apellido: ");
+                    String apellido = input.next();
+                    registro.setApellidos(apellido);
+
+                System.out.println("Ingrese su DNI: ");
+                    String dni = input.next();
+                    registro.setDni(dni);
+
+                System.out.println("Ingrese su edad: ");
+                    int edad = input.nextInt();
+                    registro.setEdad(edad);
+
+                System.out.println("Ingrese su telefono: ");
+                    String telefono = input.next();
+                    registro.setTelefono(telefono);
+
+                System.out.println("Ingrese su país: ");
+                    String pais = input.next();
+                    registro.setPais(pais);
+
+                System.out.println("Ingrese su departamento: ");
+                    String departamento = input.next();
+                    registro.setDepartamento(departamento);
+                
+                System.out.println("Ingrese su email: ");
+                    String email = input.next();
+                    registro.setEmail(email);
+
+                System.out.println("Ingrese su contraseña: ");
+                    String contrasena = input.next();
+                    registro.setContrasena(contrasena);
+
+
+                registro.registrarCliente();
                 break;
             case 3:
                 System.out.println("\nEstaremos esperandote nuevamente. Chao.");

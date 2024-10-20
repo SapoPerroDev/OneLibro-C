@@ -4,8 +4,14 @@ import OneLibro.FactoryMethod.Libro_Interface;
 
 public class Cliente extends Usuario{
     
-     public Cliente() {
+    private Beneficio beneficio; // Relación con un objeto Beneficio más detallado
+
+    public Cliente(String nombre, String apellidos, String dni, int edad, String telefono, String email, String contrasena, String pais, String departamento, Beneficio beneficio) {
+        super(nombre, apellidos, dni, edad, telefono, email, contrasena, pais, departamento);
+        this.beneficio = beneficio;
     }
+
+    public Beneficio getBeneficio() {return this.beneficio;}
 
     public void mostrarLibrosDisponibles(ArrayList<Libro_Interface> librosDisponibles) {
         if (librosDisponibles.isEmpty()) {
@@ -17,5 +23,10 @@ public class Cliente extends Usuario{
                 System.out.println("\n----------------------------" + (librosDisponibles.get(i).mostrarDetalles()));
             }
         }
+    }
+
+    @Override
+    public String toString() {
+        return getNombre() + "::" + getApellidos() + "::" + getDni()+ "::" + getEdad()+ "::" + getTelefono()+ "::" + getPais()+ "::" + getDepartamento()+ "::" + getEmail()+ "::" + getContrasena()+ "::" + getBeneficio();
     }
 }

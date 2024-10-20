@@ -7,11 +7,34 @@ public class Usuario {
     private String dni;
     private int edad;
     private String telefono;
+    private String pais;
+    private String departamento;
     private String email;
+    private String contrasena;
+    
 
-
-    public Usuario() {
+    public Usuario(String nombre, String apellidos, String dni, int edad, String telefono, String email, String contrasena, String pais, String departamento) {
+        this.nombre = nombre;
+        this.apellidos = apellidos;
+        this.dni = dni;
+        this.edad = edad;
+        this.telefono = telefono;
+        this.email = email;
+        this.contrasena = contrasena;
+        this.pais = pais;
+        this.departamento = departamento;
     }
+
+
+
+    public String getContrasena() {return this.contrasena;}
+    public void setContrasena(String contrasena) {this.contrasena = contrasena;}
+
+    public String getPais() {return this.pais;}
+    public void setPais(String pais) {this.pais = pais;}
+
+    public String getDepartamento() {return this.departamento;}
+    public void setDepartamento(String departamento) {this.departamento = departamento;}
 
     public String getNombre() {return this.nombre;}
     public void setNombre(String nombre) {this.nombre = nombre;}

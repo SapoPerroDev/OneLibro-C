@@ -5,7 +5,8 @@ import OneLibro.FactoryMethod.*;
 
 public class Administrador extends Usuario{
 
-    public Administrador() {
+    public Administrador(String nombre, String apellidos, String dni, int edad, String telefono, String email, String contrasena, String pais, String departamento) {
+        super(nombre, apellidos, dni, edad, telefono, email, contrasena, pais, departamento);
     }
 
     public void registrarLibros(ArrayList<Libro_Interface> librosDisponibles) {
