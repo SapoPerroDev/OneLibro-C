@@ -55,6 +55,12 @@ public class AudioLibro implements Libro_Interface {
     public void setFecha_publicacion(String fecha_publicacion) {this.fecha_publicacion = fecha_publicacion;}
 
     @Override
+    public String toString(){
+        return getTitulo() + "::" + getPrecio() + "::" + getAutor() + "::" + getSinopsis() + "::" + getIsbn()
+        + "::" + getDuracion() + "::" + getEdicion()+ "::" + getEditorial() + "::" + getIdioma()
+         + "::" + getGenero() + "::" + getFecha_publicacion();
+    }
+
     public String mostrarDetalles() {
         return "\nAudio Libro: " + titulo
                                 + "\nPrecio: "+ precio 
@@ -70,7 +76,7 @@ public class AudioLibro implements Libro_Interface {
     }
 
     public void llenarDetalles() {
-        Scanner scanner = new Scanner(System.in);
+        Scanner scanner = new Scanner(System.in, "utf-8");
 
         System.out.println("\n\nCrear AudioLibro: ");
 

@@ -11,6 +11,11 @@ public class Usuario {
     private String departamento;
     private String email;
     private String contrasena;
+
+
+
+    public Usuario() {
+    }
     
 
     public Usuario(String nombre, String apellidos, String dni, int edad, String telefono, String email, String contrasena, String pais, String departamento) {

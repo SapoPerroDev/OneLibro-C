@@ -69,6 +69,12 @@ public class LibroFisico implements Libro_Interface {
     
 
     @Override
+    public String toString(){
+        return getTitulo() + "::" + getPrecio() + "::" + getAutor() + "::" + getSinopsis()+ "::" + getIsbn()
+        + "::" + getEncuadernado() + "::" + getEdicion()+ "::" + getEditorial()+ "::" + getPaginas()
+        + "::" + getIdioma() + "::" + getGenero() + "::" + getStock() + "::" + getPeso() + "::" + getFecha_publicacion();
+    }
+
     public String mostrarDetalles() {
         return "\nLibro Físico: " + titulo
                                 + "\nPrecio: "+ precio 
@@ -87,7 +93,7 @@ public class LibroFisico implements Libro_Interface {
     }
 
     public void llenarDetalles() {
-        Scanner scanner = new Scanner(System.in);
+        Scanner scanner = new Scanner(System.in, "utf-8");
 
         System.out.println("\n\nCrear libro físico: ");
 

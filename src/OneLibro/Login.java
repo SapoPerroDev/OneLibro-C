@@ -35,6 +35,34 @@ public class Login{
         return existe_cliente;
     }
 
+    public boolean verificarAdministradorExistente(String e_mail, String psw){
+        AlmacenamientoAdministrador administrador = new AlmacenamientoAdministrador();
+        boolean existe_administrador = false;
+        try {
+            BufferedReader lector = new BufferedReader(new FileReader(administrador.getDIRECCION_FICHERO_ADMIN()));
+            String linea = "";
+            while ((linea = lector.readLine()) != null) {
+                String [] bloques = linea.split("::");
+                if(bloques.length == 9){
+
+                    String email = bloques[7];
+                    String contrasena = bloques[8];
+
+                    if(email.equals(e_mail) && contrasena.equals(psw)){
+                        existe_administrador = true;
+                        break;
+                    }else{
+                        existe_administrador = false;
+                    }
+                }
+            }
+            lector.close();
+
+        } catch (IOException e) {
+            System.out.println("Error en la lectura del archivo: " + e.getMessage());
+        }
+        return existe_administrador;
+    }
     /*public Usuario iniciarSesion() {
         Scanner scanner = new Scanner(System.in);
         int rol = 0;

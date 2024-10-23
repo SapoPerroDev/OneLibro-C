@@ -1,7 +1,7 @@
 package OneLibro.Facade;
 import OneLibro.*;
 
-public class RegistroFacade {
+public class RegistroClienteFacade {
 
     private String nombre;
     private String apellidos;

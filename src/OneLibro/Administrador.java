@@ -5,19 +5,32 @@ import OneLibro.FactoryMethod.*;
 
 public class Administrador extends Usuario{
 
+
+
+    public Administrador() {
+    }
+
     public Administrador(String nombre, String apellidos, String dni, int edad, String telefono, String email, String contrasena, String pais, String departamento) {
         super(nombre, apellidos, dni, edad, telefono, email, contrasena, pais, departamento);
     }
 
-    public void registrarLibros(ArrayList<Libro_Interface> librosDisponibles) {
+    public void registrarLibros() {
+        AlmacenamientoLibros almacenamiento = new AlmacenamientoLibros();
         Libro_Creator factory = null;
-        Scanner scanner = new Scanner(System.in);
+        Scanner scanner = new Scanner(System.in, "utf-8");
         boolean seguirRegistrando = true;
         int tipo = 0;
 
         while (seguirRegistrando) {
-            System.out.print("\nIngrese el tipo de libro a registrar (1: físico / 2: audiolibro / 3: electrónico/  4: salir): ");
-                tipo = scanner.nextInt();
+            System.out.println( "\n\n*************************************"
+            + "\n:::::::Menú - Registro de Libros::::::::\n "
+            + "\n1: Físico "
+            + "\n2: Audiolibro"
+            + "\n3: Electrónico"
+            + "\n4: Salir"
+            +"\n*************************************");
+            System.out.print( "\nIngrese la opción deseada: ");
+            tipo = scanner.nextInt();
 
             if (tipo == 4) {
                 seguirRegistrando = false;
@@ -33,16 +46,22 @@ public class Administrador extends Usuario{
                     break;
                 case 3:
                     factory = new ConcreteCreatorEbook();
+                    
                     break;
                 default:
-                    System.out.println("\n¡¡Tipo de libro no válido!!");
+                    System.out.println("\n\n¡¡Tipo de libro no válido!!");
                     continue;
             }
 
             // Crear y agregar el libro a la lista
             Libro_Interface libro = factory.crearLibro();
-            librosDisponibles.add(libro);
-            System.out.println("\n¡¡Libro registrado exitosamente!!");
+            almacenamiento.almacenarLibros(libro);
+            System.out.println("\n\n¡¡Libro registrado exitosamente!!");
         }
+    }
+
+    @Override
+    public String toString() {
+        return getNombre() + "::" + getApellidos() + "::" + getDni()+ "::" + getEdad()+ "::" + getTelefono()+ "::" + getPais()+ "::" + getDepartamento()+ "::" + getEmail()+ "::" + getContrasena();
     }
 }
