@@ -1,22 +1,11 @@
-//import java.util.ArrayList;
 import java.util.Scanner;
-
 import OneLibro.Administrador;
 import OneLibro.Cliente;
 import OneLibro.Login;
-//import OneLibro.Administrador;
-//import OneLibro.Cliente;
-//import OneLibro.Login;
-//import OneLibro.Usuario;
-//import OneLibro.VerificacionAdministradorExistente;
-//import OneLibro.VerificacionClienteExistente;
-//import OneLibro.*;
 import OneLibro.Facade.RegistroClienteFacade;
-//import OneLibro.FactoryMethod.*;
 
 public class OneLibro {
 
-    //private static ArrayList<Libro_Interface> librosDisponibles = new ArrayList<>();
     private static Scanner input = new Scanner(System.in, "utf-8");
 
     public static void main(String[] args) {
@@ -217,30 +206,6 @@ public class OneLibro {
             }
         }while(opcion != 5);          
     }
-
-        /*Scanner scanner = new Scanner(System.in);
-        boolean continuar = true;
-        
-        //Bucle de selección de tipo de usuario
-        while (continuar) {
-            Usuario usuario = Login.iniciarSesion();
-
-            if (usuario instanceof Administrador) {
-                ((Administrador) usuario).registrarLibros(librosDisponibles);
-            } else if (usuario instanceof Cliente) {
-                ((Cliente) usuario).mostrarLibrosDisponibles(librosDisponibles);
-            }
-
-            //Preguntar si el usuario desea continuar
-            System.out.print("\n\n¿Desea realizar otra operación? (si/no): ");
-                String respuesta = scanner.nextLine();
-
-            if (!respuesta.equalsIgnoreCase("si")) {
-                continuar = false;
-            }
-        }
-
-        System.out.println("\n\nGracias por usar el sistema de gestión de pedidos de libros.");*/
 }
     
 

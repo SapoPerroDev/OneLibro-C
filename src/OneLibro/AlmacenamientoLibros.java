@@ -4,9 +4,6 @@ import java.io.BufferedWriter;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.util.ArrayList;
-
-//import OneLibro.FactoryMethod.Libro_Creator;
-//import OneLibro.FactoryMethod.Libro_Interface;
 import OneLibro.FactoryMethod.Libro_Interface;
 
 public class AlmacenamientoLibros {
