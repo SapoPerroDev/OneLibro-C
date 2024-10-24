@@ -5,7 +5,7 @@ import java.io.IOException;
 
 public class Login{
 
-    public boolean verificarClienteExistente(String e_mail, String psw){
+    public boolean verificarLoginCliente(String e_mail, String psw){
         AlmacenamientoCliente cliente = new AlmacenamientoCliente();
         boolean existe_cliente = false;
         try {
@@ -34,7 +34,7 @@ public class Login{
         return existe_cliente;
     }
 
-    public boolean verificarAdministradorExistente(String e_mail, String psw){
+    public boolean verificarLoginAdministrador(String e_mail, String psw){
         AlmacenamientoAdministrador administrador = new AlmacenamientoAdministrador();
         boolean existe_administrador = false;
         try {
