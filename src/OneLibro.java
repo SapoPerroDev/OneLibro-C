@@ -46,10 +46,10 @@ public class OneLibro {
                 System.out.print("Ingrese su contraseña: ");
                     String contrasenaa = input.next();
 
-                if (login.verificarClienteExistente(emaill, contrasenaa)) {
+                if (login.verificarLoginCliente(emaill, contrasenaa)) {
                     System.out.println("\n¡Inicio de sesión exitoso cliente!");
                     menuCliente();
-                }else if(login.verificarAdministradorExistente(emaill, contrasenaa)){
+                }else if(login.verificarLoginAdministrador(emaill, contrasenaa)){
                     System.out.println("\n¡Inicio de sesión exitoso admin!");
                     menuAdmin();
                 }else{
