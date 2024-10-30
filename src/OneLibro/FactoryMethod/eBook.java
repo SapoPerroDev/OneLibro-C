@@ -4,6 +4,7 @@ import java.util.Scanner;
 
 public class eBook implements Libro_Interface {
     
+    //Atributos
     private String titulo;
     private String autor;
     private String formato;
@@ -56,6 +57,13 @@ public class eBook implements Libro_Interface {
 
 
     @Override
+    public String toString(){
+        return getTitulo() + "::" + getPrecio() + "::" + getAutor() + "::" + getSinopsis() + "::" + getIsbn()
+        + "::" + getFormato() + "::" + getPaginas()+ "::" + getEdicion()+ "::" + getEditorial() + "::" + getIdioma()
+         + "::" + getGenero() + "::" + getFecha_publicacion();
+    }
+
+
     public String mostrarDetalles() {
         return "\nAudio Libro: " + titulo
                                 + "\nPrecio: "+ precio 
@@ -72,7 +80,7 @@ public class eBook implements Libro_Interface {
     }
 
     public void llenarDetalles() {
-        Scanner scanner = new Scanner(System.in);
+        Scanner scanner = new Scanner(System.in, "utf-8");
 
         System.out.println("\n\nCrear eBook: ");
 
