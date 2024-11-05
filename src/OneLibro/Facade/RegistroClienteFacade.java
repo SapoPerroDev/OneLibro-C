@@ -1,5 +1,6 @@
 package OneLibro.Facade;
 import OneLibro.*;
+import resources.Ansi;
 
 public class RegistroClienteFacade {
 
@@ -51,10 +52,10 @@ public class RegistroClienteFacade {
                 
                 //almacena el cliente en un fichero
                 almacenamiento.almacenarClientes(cliente);
-                System.out.println("\n\n¡Usuario registrado con exito!");
+                System.out.println(Ansi.GREEN + "\n\n¡Usuario registrado con exito!" + Ansi.RESET);
             }
         } else {
-            System.out.println("Error en los datos de registro.");
+            System.out.println(Ansi.RED + "Error en los datos de registro:" + Ansi.RESET);
             System.out.println("E-mail o contraseña invalidas. Por favor, digite nuevamente.");
         }
     }

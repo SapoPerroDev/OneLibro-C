@@ -3,6 +3,8 @@ import OneLibro.Administrador;
 import OneLibro.Cliente;
 import OneLibro.Login;
 import OneLibro.Facade.RegistroClienteFacade;
+import resources.Ansi;
+
 
 public class OneLibro {
 
@@ -15,13 +17,18 @@ public class OneLibro {
     public static void menu() {
         int opcion = 0;
         do{
-            System.out.println("\n\n***************************************************************" 
-                                + "\n******************* Bienvid@ a OneLibro ***********************" 
-                                + "\n***************************************************************");
+            System.out.println("\n................................................................"
+                                + Ansi.GREEN + "\n..####...##..##..######..##......######..#####...#####....####.."
+                                + "\n.##..##..###.##..##......##........##....##..##..##..##..##..##."
+                                + "\n.##..##..##.###..####....##........##....#####...#####...##..##."
+                                + "\n.##..##..##..##..##......##........##....##..##..##..##..##..##."
+                                + "\n..####...##..##..######..######..######..#####...##..##...####.." + Ansi.RESET
+                                + "\n................................................................");
+
                 
                 System.out.println("\nAquí encontrarás cualquier libro en los formatos más utilizados."
                         + "\nLa experiencia será maravillosa, espero disfrutes la navegación "
-                        + "\n\n¡IMPORTANTE!:  "
+                        + Ansi.RED + "\n\n¡IMPORTANTE!:  " + Ansi.RESET
                         + "\n1. Debes iniciar sesión para utilizar OneLibro."
                         + "\n2. Si no tienes una cuenta, deberás crearte una.");
     
@@ -47,13 +54,13 @@ public class OneLibro {
                     String contrasenaa = input.next();
 
                 if (login.verificarLoginCliente(emaill, contrasenaa)) {
-                    System.out.println("\n¡Inicio de sesión exitoso cliente!");
+                    System.out.println(Ansi.GREEN + "\n¡Inicio de sesión exitoso cliente!" + Ansi.RESET);
                     menuCliente();
                 }else if(login.verificarLoginAdministrador(emaill, contrasenaa)){
-                    System.out.println("\n¡Inicio de sesión exitoso admin!");
+                    System.out.println(Ansi.GREEN + "\n¡Inicio de sesión exitoso admin!" + Ansi.RESET);
                     menuAdmin();
                 }else{
-                    System.out.println("\nNo se logro iniciar sesión. Corrija el E-mail o la contraseña e intente nuevamente");
+                    System.out.println(Ansi.RED + "\nNo se logro iniciar sesión. Corrija el E-mail o la contraseña e intente nuevamente" + Ansi.RESET);
                 } 
                 break;
             case 2:

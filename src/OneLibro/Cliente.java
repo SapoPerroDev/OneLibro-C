@@ -1,6 +1,9 @@
 package OneLibro;
 
 import java.util.ArrayList;
+
+import resources.Ansi;
+
 import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
@@ -133,12 +136,12 @@ public class Cliente extends Usuario{
             System.out.println("Error en la escritura del archivo: " + e.getMessage());
         }
 
-        System.out.println("\n\n\n*****************************************************"
-                         + "\n                   Libros disponibles" 
+        System.out.println("\n\n\n*****************************************************" + Ansi.YELLOW
+                         + "\n                   Libros disponibles" + Ansi.RESET
                          + "\n*****************************************************");
 
         if(librosDisponibles.size() < 1){
-            System.out.println("\n¡No hay libros disponibles por el momento! Por favor, ingresa más tarde.\n");
+            System.out.println(Ansi.RED + "\n¡No hay libros disponibles por el momento! Por favor, ingresa más tarde.\n" + Ansi.RESET);
         }else{
             System.out.println("\nLibros puestos para la compra: ");
    
