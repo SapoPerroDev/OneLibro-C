@@ -9,6 +9,7 @@ public class VerificacionEstado extends ControlVerificacion {
         Login login = new Login();
         if(!login.extraerEstado(email, password)){
             System.out.println(Ansi.RED + "\nLa cuenta se encuentra suspendida o bloqueada. Por favor, contactese con soporte." + Ansi.RESET);
+            System.out.println("sapa");
             return false;
         }      
         return siguienteVerificacion(email, password);

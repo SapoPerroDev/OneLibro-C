@@ -5,9 +5,9 @@ import java.io.IOException;
 
 public class Login{
 
- /*private String [] datos_usuario;
+    private String [] datos_usuario;
 
-    public void extraerDatosCadenaResponsabilidad(){
+    /*public void extraerDatosCadenaResponsabilidad(){
         AlmacenamientoUsuario usuario = new AlmacenamientoUsuario();
         try {
             BufferedReader lector = new BufferedReader(new FileReader(usuario.getDIRECCION_FICHERO_USUARIO()));
@@ -47,10 +47,10 @@ public class Login{
             BufferedReader lector = new BufferedReader(new FileReader(usuario.getDIRECCION_FICHERO_USUARIO()));
             String linea = "";
             while ((linea = lector.readLine()) != null) {
-                String [] bloques = linea.split("::");
-                if(bloques.length >= 11){
+                datos_usuario = linea.split("::");
+                if(datos_usuario.length >= 11){
 
-                    String email = bloques[8];
+                    String email = datos_usuario[8];
 
                     if(email.equals(e_mail)){
                         existe_usuario = true;
@@ -66,6 +66,37 @@ public class Login{
             System.out.println("Error en la lectura del archivo: " + e.getMessage());
         }
         return existe_usuario;
+    }
+
+    public boolean extraer(String e_mail, String psw){
+        boolean existe_usuario = false;
+
+        String email = datos_usuario[8];
+        String contrasena = datos_usuario[9];
+
+        if(email.equals(e_mail) && contrasena.equals(psw)){
+            existe_usuario = true;
+        }else{
+            existe_usuario = false;
+        }
+        return existe_usuario;
+    }
+
+    public boolean extraere(String e_mail, String psw){
+        boolean existe_usuario = false;
+
+        String estado = datos_usuario[10];
+
+        if(estado.equals("Activo")){
+            existe_usuario = true;
+        }else{
+            existe_usuario = false;
+        }
+        return existe_usuario;
+    }
+
+    public String extraeree(){  
+        return datos_usuario[0];
     }
 
     public boolean extraerPsw(String e_mail, String psw){

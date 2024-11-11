@@ -1,24 +1,24 @@
 package OneLibro.CadenaResponsabilidad;
 
-public class LimitacionIntentosPsw extends ControlVerificacion{
-    private int requestPerMinute;
-    private int request;
-    private long currentTime;
+public class LimitacionIntentos extends ControlVerificacion{
+    private int peticiones_por_minuto;
+    private int peticiones;
+    private long hora_actual;
 
-    public LimitacionIntentosPsw(int requestPerMinute) {
-        this.requestPerMinute = requestPerMinute;
-        this.currentTime = System.currentTimeMillis();
+    public LimitacionIntentos(int peticiones_por_minuto) {
+        this.peticiones_por_minuto = peticiones_por_minuto;
+        this.hora_actual = System.currentTimeMillis();
     }
 
     public boolean verificar(String email, String password) {
-        if (System.currentTimeMillis() > currentTime + 60_000) {
-            request = 0;
-            currentTime = System.currentTimeMillis();
+        if (System.currentTimeMillis() > hora_actual + 60_000) {
+            peticiones = 0;
+            hora_actual = System.currentTimeMillis();
         }
 
-        request++;
+        peticiones++;
         
-        if (request > requestPerMinute) {
+        if (peticiones > peticiones_por_minuto) {
             System.out.println("\n¡Se ha excedido el límite de intentos por minuto!");
             System.out.println("Intente nuevamente en 30 segundos");
             

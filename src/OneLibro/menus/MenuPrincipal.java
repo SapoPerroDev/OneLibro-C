@@ -2,7 +2,7 @@ package OneLibro.menus;
 
 import java.util.Scanner;
 import OneLibro.CadenaResponsabilidad.ControlVerificacion;
-import OneLibro.CadenaResponsabilidad.LimitacionIntentosPsw;
+import OneLibro.CadenaResponsabilidad.LimitacionIntentos;
 import OneLibro.CadenaResponsabilidad.VerificacionCredenciales;
 import OneLibro.CadenaResponsabilidad.VerificacionEstado;
 import OneLibro.CadenaResponsabilidad.VerificacionTipoUsuario;
@@ -47,11 +47,15 @@ public class MenuPrincipal {
                 boolean success;
                 
                 VerificacionTipoUsuario verificacionTipoUsuario = new VerificacionTipoUsuario();
+                VerificacionEstado verificacionEstado = new VerificacionEstado();
+                VerificacionCredenciales verificacionCredenciales = new VerificacionCredenciales();
+                LimitacionIntentos limitacionIntentos = new LimitacionIntentos(2);
+
                 ControlVerificacion cadena = ControlVerificacion.enlace(
-                    new LimitacionIntentosPsw(2),
-                    new VerificacionCredenciales(),
-                    new VerificacionEstado(),
-                    verificacionTipoUsuario // Usar la instancia aquí
+                    limitacionIntentos,
+                    verificacionCredenciales,
+                    verificacionEstado,
+                    verificacionTipoUsuario 
                 );
 
 
@@ -63,25 +67,25 @@ public class MenuPrincipal {
                         String password = input.next();
 
                     if (cadena.verificar(email, password)) {
-                        // Obtener el tipo de usuario
-                        String tipoUsuario = verificacionTipoUsuario.getTipoUsuario();
                         System.out.println(Ansi.GREEN + "\n¡Inicio de sesión exitoso!" + Ansi.RESET);
-                        success = true;
-                        // Ejecutar el menú correspondiente
-                        if ("Administrador".equals(tipoUsuario)) {
-                            MenuAdmin.menuAdmin();
-                            break;
-                        } else if ("Cliente".equals(tipoUsuario)) {
-                            MenuCliente.menuCliente();
-                            break;
-                        }
-                        
+                        success = true;     
                     } else {
                         success = false;
                     }
                 } while (!success);
                 System.out.println("Yase ceroro");
+                // Obtener el tipo de usuario
+                String tipoUsuario = verificacionTipoUsuario.getTipoUsuario();
+                // Ejecutar el menú correspondiente
+                if ("Administrador".equals(tipoUsuario)) {
+                    MenuAdmin.menuAdmin();
+                    break;
+                } else if ("Cliente".equals(tipoUsuario)) {
+                    MenuCliente.menuCliente();
+                    break;
+                }
                 break;
+
             case 2:
                 RegistroClienteFacade registro = new RegistroClienteFacade();
 
@@ -121,8 +125,7 @@ public class MenuPrincipal {
                     String contrasena = input.next();
                     registro.setContrasena(contrasena);
 
-
-                registro.registrarCliente();
+                registro.registrarCliente(); // registra al usuario por medio del facade
                 break;
             case 3:
                 System.out.println("\nEstaremos esperandote nuevamente. Chao.");

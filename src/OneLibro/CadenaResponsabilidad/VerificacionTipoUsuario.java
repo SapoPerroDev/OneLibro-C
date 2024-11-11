@@ -1,27 +1,29 @@
 package OneLibro.CadenaResponsabilidad;
 
-import OneLibro.Login;
-
 public class VerificacionTipoUsuario extends ControlVerificacion {
-    private String tipoUsuario;
+    private String tipo_usuario;
 
     @Override
     public boolean verificar(String email, String password) {
-        Login login = new Login();
-        if (login.extraerTipo(email, password)) {
-            System.out.println("Admin");
-                tipoUsuario = "Administrador";
+        if (obtenerDominio(email).equals("@onelibro.com")) {
+            tipo_usuario = "Administrador";
             return true;
         }
-
-        System.out.println("Cliente");
-            tipoUsuario = "Cliente";
+        tipo_usuario = "Cliente";
         return siguienteVerificacion(email, password);
-        
+    }
 
+    //Extrae el dominio del email ingresado
+    public static String obtenerDominio(String email) {
+        int index = email.indexOf("@");
+        if (index != -1) {
+            return email.substring(index);
+        } else {
+            return "Formato de correo no válido";
+        }
     }
     
     public String getTipoUsuario() {
-        return tipoUsuario;
+        return tipo_usuario;
     }
 }
