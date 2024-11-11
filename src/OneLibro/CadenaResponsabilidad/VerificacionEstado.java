@@ -1,17 +1,21 @@
 package OneLibro.CadenaResponsabilidad;
 
-import OneLibro.Login;
+import OneLibro.validation.Login;
 import resources.Ansi;
 
 public class VerificacionEstado extends ControlVerificacion {
+    private Login login;
+
+    public VerificacionEstado (Login login){
+        this.login = login;
+    }
+
     @Override
     public boolean verificar(String email, String password) {
-        Login login = new Login();
-        if(!login.extraerEstado(email, password)){
+        if(!login.validarEstado()){
             System.out.println(Ansi.RED + "\nLa cuenta se encuentra suspendida o bloqueada. Por favor, contactese con soporte." + Ansi.RESET);
-            System.out.println("sapa");
             return false;
-        }      
+        }   
         return siguienteVerificacion(email, password);
     }
 }

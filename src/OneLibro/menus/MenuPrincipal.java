@@ -1,12 +1,14 @@
 package OneLibro.menus;
 
 import java.util.Scanner;
+
 import OneLibro.CadenaResponsabilidad.ControlVerificacion;
 import OneLibro.CadenaResponsabilidad.LimitacionIntentos;
 import OneLibro.CadenaResponsabilidad.VerificacionCredenciales;
 import OneLibro.CadenaResponsabilidad.VerificacionEstado;
 import OneLibro.CadenaResponsabilidad.VerificacionTipoUsuario;
 import OneLibro.Facade.RegistroClienteFacade;
+import OneLibro.validation.Login;
 import resources.Ansi;
 
 public class MenuPrincipal {
@@ -45,17 +47,14 @@ public class MenuPrincipal {
         switch (opcion) {
             case 1:
                 boolean success;
-                
-                VerificacionTipoUsuario verificacionTipoUsuario = new VerificacionTipoUsuario();
-                VerificacionEstado verificacionEstado = new VerificacionEstado();
-                VerificacionCredenciales verificacionCredenciales = new VerificacionCredenciales();
-                LimitacionIntentos limitacionIntentos = new LimitacionIntentos(2);
+
+                Login login = new Login();
 
                 ControlVerificacion cadena = ControlVerificacion.enlace(
-                    limitacionIntentos,
-                    verificacionCredenciales,
-                    verificacionEstado,
-                    verificacionTipoUsuario 
+                    new LimitacionIntentos(2),
+                    new VerificacionCredenciales(login),
+                    new VerificacionEstado(login),
+                    new VerificacionTipoUsuario() 
                 );
 
 
@@ -73,19 +72,15 @@ public class MenuPrincipal {
                         success = false;
                     }
                 } while (!success);
-                System.out.println("Yase ceroro");
-                // Obtener el tipo de usuario
-                String tipoUsuario = verificacionTipoUsuario.getTipoUsuario();
-                // Ejecutar el menú correspondiente
-                if ("Administrador".equals(tipoUsuario)) {
-                    MenuAdmin.menuAdmin();
-                    break;
-                } else if ("Cliente".equals(tipoUsuario)) {
-                    MenuCliente.menuCliente();
-                    break;
-                }
-                break;
 
+                //Terminada toda la cadena de forma correcta, obtiene el tipo de cuenta que está ingresando
+                if (login.getTipoUsuario().equals("Administrador")) {
+                    MenuAdmin.menuAdmin();
+                } else{
+                    MenuCliente.menuCliente();
+                }
+
+                break;
             case 2:
                 RegistroClienteFacade registro = new RegistroClienteFacade();
 

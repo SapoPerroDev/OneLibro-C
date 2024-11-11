@@ -1,7 +1,8 @@
-package OneLibro;
+package OneLibro.models;
 
 import java.util.ArrayList;
 
+import OneLibro.data.AlmacenamientoLibros;
 import resources.Ansi;
 
 import java.io.BufferedReader;
@@ -61,7 +62,7 @@ public class Cliente extends Usuario{
                                 + "\nEditorial: " + editorial 
                                 + "\nIdioma: " + idioma
                                 + "\nGenero: " + genero
-                                + "\nFecha de Publicaciòn: " + fecha_publicacion;
+                                + "\nFecha de Publicación: " + fecha_publicacion;
 
                     librosDisponibles.add(audio_libro);
                 }
@@ -91,7 +92,7 @@ public class Cliente extends Usuario{
                                 + "\nEditorial: " + editorial 
                                 + "\nIdioma: " + idioma
                                 + "\nGenero: " + genero
-                                + "\nFecha de Publicaciòn: " + fecha_publicacion;
+                                + "\nFecha de Publicaciónn: " + fecha_publicacion;
 
                     librosDisponibles.add(eBook);
                 }

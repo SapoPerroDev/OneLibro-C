@@ -1,5 +1,9 @@
 package OneLibro.Facade;
 import OneLibro.*;
+import OneLibro.data.AlmacenamientoUsuario;
+import OneLibro.models.Beneficio;
+import OneLibro.models.Cliente;
+import OneLibro.validation.VerificacionUsuarioExistente;
 import resources.Ansi;
 
 public class RegistroClienteFacade {
@@ -36,9 +40,9 @@ public class RegistroClienteFacade {
 
     public void registrarCliente() {
         VerificacionUsuarioExistente verificacion = new VerificacionUsuarioExistente();
-         Cliente cliente;
+        Cliente cliente;
         AlmacenamientoUsuario almacenamiento = new AlmacenamientoUsuario();
-         Beneficio beneficios = new Beneficio();
+        Beneficio beneficios = new Beneficio();
 
         if (verificacion.validarEmail(email) && verificacion.validarContrasena(contrasena)) {
            if(verificacion.verificarUsuarioExistente(dni, email )){

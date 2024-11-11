@@ -1,4 +1,4 @@
-package OneLibro;
+package OneLibro.models;
 
 public class Usuario {
     

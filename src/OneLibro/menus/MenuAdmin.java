@@ -1,7 +1,8 @@
 package OneLibro.menus;
 
 import java.util.Scanner;
-import OneLibro.Administrador;
+
+import OneLibro.models.Administrador;
 
 
 public class MenuAdmin {
@@ -14,7 +15,7 @@ public class MenuAdmin {
         int opcion = 0;
         do{
             System.out.println("\n\n**********************************"
-                                  + "\n:::::::::::Menú - Admin:::::::::::\n"
+                                  + "\n:::::::::::Menú - Admin:::::::::::"
                                   +"\n1. Registrar Libros"
                                   +"\n2. Mostrar Libros Registrados (pronto)"
                                   +"\n3: Editar Libros registrados (pronto)."

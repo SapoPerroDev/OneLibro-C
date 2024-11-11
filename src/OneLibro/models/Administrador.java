@@ -1,6 +1,8 @@
-package OneLibro;
+package OneLibro.models;
 import java.util.Scanner;
+
 import OneLibro.FactoryMethod.*;
+import OneLibro.data.AlmacenamientoLibros;
 import resources.Ansi;
 
 public class Administrador extends Usuario{
@@ -50,7 +52,7 @@ public class Administrador extends Usuario{
                     System.out.println(Ansi.RED + "\n\n¡¡Tipo de libro no válido!!" + Ansi.RESET);
                     continue;
             }
-
+            scanner.close();
             // Crear y agregar el libro a la lista
             Libro_Interface libro = factory.crearLibro();
             almacenamiento.almacenarLibros(libro);

@@ -6,10 +6,8 @@ public class VerificacionTipoUsuario extends ControlVerificacion {
     @Override
     public boolean verificar(String email, String password) {
         if (obtenerDominio(email).equals("@onelibro.com")) {
-            tipo_usuario = "Administrador";
             return true;
         }
-        tipo_usuario = "Cliente";
         return siguienteVerificacion(email, password);
     }
 

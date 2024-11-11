@@ -17,6 +17,7 @@ public abstract class ControlVerificacion {
 
     protected boolean siguienteVerificacion(String email, String password) {
         if (siguiente == null) {
+            System.out.println("Cliente");
             return true;
         }
         return siguiente.verificar(email, password);

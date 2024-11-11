@@ -1,7 +1,8 @@
 package OneLibro.menus;
 
 import java.util.Scanner;
-import OneLibro.Cliente;
+
+import OneLibro.models.Cliente;
 
 public class MenuCliente {
 
@@ -13,8 +14,8 @@ public class MenuCliente {
         int opcion = 0;
         do{
             System.out.println("\n\n************************************"
-                                  + "\n:::::::::::Menú - Cliente:::::::::::\n"
-                                  +"\n1. Mostrar catálogo completo de l6ibros."
+                                  + "\n:::::::::::Menú - Cliente:::::::::::"
+                                  +"\n1. Mostrar catálogo completo."
                                   +"\n2. Buscar libro deseado (pronto)."
                                   +"\n3. Agregar al carrito (pronto)."
                                   +"\n4: Comprar (pronto)."

@@ -1,9 +1,11 @@
-package OneLibro;
+package OneLibro.data;
 
 import java.io.BufferedWriter;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.util.ArrayList;
+
+import OneLibro.models.Usuario;
 
 public class AlmacenamientoUsuario {
 
