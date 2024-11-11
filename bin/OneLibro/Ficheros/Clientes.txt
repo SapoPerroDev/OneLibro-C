@@ -1,2 +1,0 @@
-Alejandro::Gutierrez::1234567890::19::349539486356::Colombia::Cauca::alejo@gmail.com::123456789::Sin beneficio::Ninguno::0.0::No se aplica ningun beneficio::null::null::0.0
-Laura::Arango::12335424534::18::25834843::Colombia::Antioquia::laura@gmail.com::123456789::Envio gratuito::Envio gratuito::0.0::Solo valido en productos seleccionados::2024-01-01::2024-12-31::0.0

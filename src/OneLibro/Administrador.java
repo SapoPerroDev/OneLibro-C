@@ -5,13 +5,11 @@ import resources.Ansi;
 
 public class Administrador extends Usuario{
 
-
-
     public Administrador() {
     }
 
-    public Administrador(String nombre, String apellidos, String dni, int edad, String telefono, String email, String contrasena, String pais, String departamento) {
-        super(nombre, apellidos, dni, edad, telefono, email, contrasena, pais, departamento);
+    public Administrador(String nombre, String apellidos, String dni, int edad, String telefono, String email, String contrasena, String pais, String departamento, String estado) {
+        super("Administrador", nombre, apellidos, dni, edad, telefono, email, contrasena, pais, departamento, estado);
     }
 
     public void registrarLibros() {
@@ -62,6 +60,6 @@ public class Administrador extends Usuario{
 
     @Override
     public String toString() {
-        return getNombre() + "::" + getApellidos() + "::" + getDni()+ "::" + getEdad()+ "::" + getTelefono()+ "::" + getPais()+ "::" + getDepartamento()+ "::" + getEmail()+ "::" + getContrasena();
+        return getTipo_usuario()+ "::" + getNombre() + "::" + getApellidos() + "::" + getDni()+ "::" + getEdad()+ "::" + getTelefono()+ "::" + getPais()+ "::" + getDepartamento()+ "::" + getEmail()+ "::" + getContrasena()+ "::" + getEstado();
     }
 }

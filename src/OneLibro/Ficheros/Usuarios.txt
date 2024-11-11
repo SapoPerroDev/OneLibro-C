@@ -1,0 +1,6 @@
+Administrador::Brayan Alejandro::Gutierrez Lopez::106725823748::19::325878478234::Colombia::Cauca::alejandro@onelibro.com::123456789::Activo
+Cliente::Alejandro::Gutierrez::1234567890::19::349539486356::Colombia::Cauca::alejo@gmail.com::123456789::Activo::Sin beneficio::Ninguno::0.0::No se aplica ningun beneficio::null::null::0.0
+Cliente::Laura::Arango::12335424534::18::25834843::Colombia::Antioquia::laura@gmail.com::123456789::Inactivo::Envio gratuito::Envio gratuito::0.0::Solo valido en productos seleccionados::2024-01-01::2024-12-31::0.0
+Cliente::Alfonso::Armadillo::3485939486::34::2358394435::Colombia::Bogota::armadillo@gmail.com::123456789::Suspendido::Sin beneficio::Ninguno::0.0::No se aplica ningun beneficio::null::null::0.0
+Cliente::Santiago::Melendez::2895489234::11::23489234::Colombia::Cauca::santi@gmail.com::123456789::Activo::Sin beneficio::Ninguno::0.0::No se aplica ningun beneficio::null::null::0.0
+Cliente::Andres::Arango::23423489234::56::3423423432::Colombia::Cauca::arango@gmail.com::12345678::Activo::Sin beneficio::Ninguno::0.0::No se aplica ningun beneficio::null::null::0.0

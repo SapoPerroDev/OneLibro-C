@@ -2,6 +2,7 @@ package OneLibro;
 
 public class Usuario {
     
+    private String tipo_usuario;
     private String nombre;
     private String apellidos;
     private String dni;
@@ -11,26 +12,31 @@ public class Usuario {
     private String departamento;
     private String email;
     private String contrasena;
-
-
+    private String estado;
 
     public Usuario() {
     }
     
-
-    public Usuario(String nombre, String apellidos, String dni, int edad, String telefono, String email, String contrasena, String pais, String departamento) {
+    public Usuario(String tipo_usuario, String nombre, String apellidos, String dni, int edad, String telefono, String pais, String departamento, String email, String contrasena, String estado) {
+        this.tipo_usuario = tipo_usuario;
         this.nombre = nombre;
         this.apellidos = apellidos;
         this.dni = dni;
         this.edad = edad;
         this.telefono = telefono;
-        this.email = email;
-        this.contrasena = contrasena;
         this.pais = pais;
         this.departamento = departamento;
+        this.email = email;
+        this.contrasena = contrasena;
+        this.estado = estado;
     }
 
 
+    public String getTipo_usuario() {return this.tipo_usuario;}
+    public void setTipo_usuario(String tipo_usuario) {this.tipo_usuario = tipo_usuario;}
+
+    public String getEstado() {return this.estado;}
+    public void setEstado(String estado) {this.estado = estado;}
 
     public String getContrasena() {return this.contrasena;}
     public void setContrasena(String contrasena) {this.contrasena = contrasena;}

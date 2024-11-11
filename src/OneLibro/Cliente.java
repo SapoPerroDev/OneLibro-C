@@ -16,11 +16,11 @@ public class Cliente extends Usuario{
     public Cliente() {
     }
 
-
-    public Cliente(String nombre, String apellidos, String dni, int edad, String telefono, String email, String contrasena, String pais, String departamento, Beneficio beneficio) {
-        super(nombre, apellidos, dni, edad, telefono, email, contrasena, pais, departamento);
+    public Cliente(String nombre, String apellidos, String dni, int edad, String telefono, String email, String contrasena, String pais, String departamento, Beneficio beneficio, String estado) {
+        super("Cliente", nombre, apellidos, dni, edad, telefono, email, contrasena, pais, departamento, estado);
         this.beneficio = beneficio;
     }
+
 
     public Beneficio getBeneficio() {return this.beneficio;}
 
@@ -154,6 +154,6 @@ public class Cliente extends Usuario{
     }
     @Override
     public String toString() {
-        return getNombre() + "::" + getApellidos() + "::" + getDni()+ "::" + getEdad()+ "::" + getTelefono()+ "::" + getPais()+ "::" + getDepartamento()+ "::" + getEmail()+ "::" + getContrasena()+ "::" + getBeneficio();
+        return getTipo_usuario()+ "::" + getNombre() + "::" + getApellidos() + "::" + getDni()+ "::" + getEdad()+ "::" + getTelefono()+ "::" + getPais()+ "::" + getDepartamento()+ "::" + getEmail()+ "::" + getContrasena()+ "::" + getEstado()+ "::" + getBeneficio();
     }
 }
