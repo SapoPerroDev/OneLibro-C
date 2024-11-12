@@ -82,7 +82,7 @@ public class eBook implements Libro_Interface {
     public void llenarDetalles() {
         Scanner scanner = new Scanner(System.in, "utf-8");
 
-        System.out.println("\n\nCrear eBook: ");
+        System.out.println("\n\nCrear eBook");
 
         System.out.print("\nIngrese el título: ");
             this.titulo = scanner.nextLine();

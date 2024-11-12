@@ -4,3 +4,4 @@ Cliente::Laura::Arango::12335424534::18::25834843::Colombia::Antioquia::laura@gm
 Cliente::Alfonso::Armadillo::3485939486::34::2358394435::Colombia::Bogota::armadillo@gmail.com::123456789::Suspendido::Sin beneficio::Ninguno::0.0::No se aplica ningun beneficio::null::null::0.0
 Cliente::Santiago::Melendez::2895489234::11::23489234::Colombia::Cauca::santi@gmail.com::123456789::Activo::Sin beneficio::Ninguno::0.0::No se aplica ningun beneficio::null::null::0.0
 Cliente::Andres::Arango::23423489234::56::3423423432::Colombia::Cauca::arango@gmail.com::12345678::Activo::Sin beneficio::Ninguno::0.0::No se aplica ningun beneficio::null::null::0.0
+Cliente::kangris::kangrejo::234235346::45::4353456::Colombia::Santander::kangris@gmail.com::123456789::Activo::Sin beneficio::Ninguno::0.0::No se aplica ningun beneficio::null::null::0.0

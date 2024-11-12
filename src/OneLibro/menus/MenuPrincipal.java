@@ -14,6 +14,7 @@ import resources.Ansi;
 public class MenuPrincipal {
 
     private static Scanner input = new Scanner(System.in, "utf-8");
+    private static Login login;
 
     public static void menu() {
         int opcion = 0;
@@ -48,7 +49,7 @@ public class MenuPrincipal {
             case 1:
                 boolean success;
 
-                Login login = new Login();
+                login = new Login();
 
                 ControlVerificacion cadena = ControlVerificacion.enlace(
                     new LimitacionIntentos(2),

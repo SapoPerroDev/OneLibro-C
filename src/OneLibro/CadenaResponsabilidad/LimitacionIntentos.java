@@ -1,5 +1,7 @@
 package OneLibro.CadenaResponsabilidad;
 
+import resources.Ansi;
+
 public class LimitacionIntentos extends ControlVerificacion{
     private int peticiones_por_minuto;
     private int peticiones;
@@ -19,7 +21,7 @@ public class LimitacionIntentos extends ControlVerificacion{
         peticiones++;
         
         if (peticiones > peticiones_por_minuto) {
-            System.out.println("\n¡Se ha excedido el límite de intentos por minuto!");
+            System.out.println(Ansi.RED + "\n¡Se ha excedido el límite de intentos por minuto!" + Ansi.RESET);
             System.out.println("Intente nuevamente en 30 segundos");
             
             mostrarBarraDeProgreso(30);

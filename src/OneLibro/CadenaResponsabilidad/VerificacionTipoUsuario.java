@@ -1,8 +1,6 @@
 package OneLibro.CadenaResponsabilidad;
 
 public class VerificacionTipoUsuario extends ControlVerificacion {
-    private String tipo_usuario;
-
     @Override
     public boolean verificar(String email, String password) {
         if (obtenerDominio(email).equals("@onelibro.com")) {
@@ -19,9 +17,5 @@ public class VerificacionTipoUsuario extends ControlVerificacion {
         } else {
             return "Formato de correo no válido";
         }
-    }
-    
-    public String getTipoUsuario() {
-        return tipo_usuario;
     }
 }
