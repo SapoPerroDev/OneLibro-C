@@ -1,6 +1,6 @@
 package OneLibro.CadenaResponsabilidad;
 
-public abstract class ControlVerificacion {
+public abstract class ControlVerificacion implements Handler {
     private ControlVerificacion siguiente;
 
     // Construcción de cadena
