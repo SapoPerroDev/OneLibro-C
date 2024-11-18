@@ -4,6 +4,8 @@ import java.util.Scanner;
 
 public class AudioLibro implements Libro_Interface {
 
+    private Scanner scanner = new Scanner(System.in, "utf-8");
+
     //Atributos
     private String titulo;
     private String isbn;
@@ -76,7 +78,6 @@ public class AudioLibro implements Libro_Interface {
     }
 
     public void llenarDetalles() {
-        Scanner scanner = new Scanner(System.in, "utf-8");
 
         System.out.println("\n\nCrear AudioLibro");
 

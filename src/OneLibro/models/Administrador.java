@@ -6,6 +6,8 @@ import OneLibro.data.AlmacenamientoLibros;
 
 public class Administrador extends Usuario{
 
+    private Scanner scanner = new Scanner(System.in, "utf-8");
+
     public Administrador() {
     }
 
@@ -16,7 +18,6 @@ public class Administrador extends Usuario{
     public void registrarLibros() {
         AlmacenamientoLibros almacenamiento = new AlmacenamientoLibros();
         Libro_Creator factory = null;
-        Scanner scanner = new Scanner(System.in, "utf-8");
         boolean seguirRegistrando = true;
         int tipo = 0;
 
