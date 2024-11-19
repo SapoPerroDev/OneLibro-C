@@ -7,7 +7,7 @@ import java.util.ArrayList;
 
 public class AlmacenamientoCliente {
 
-    private final String DIRECCION_FICHERO_CLIENTE = "C:\\Users\\PEOPLE\\Desktop\\OneLibro\\src\\OneLibro\\Ficheros\\Clientes.txt";
+    private final String DIRECCION_FICHERO_CLIENTE = "C:\\Users\\PEOPLE\\Desktop\\OneLibro\\src\\OneLibro-C\\Ficheros\\Clientes.txt";
 
     //Registrar clientees de las partidas jugadas
     public void almacenarClientes(Cliente cliente){

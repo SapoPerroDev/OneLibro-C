@@ -8,7 +8,7 @@ import OneLibro.FactoryMethod.Libro_Interface;
 
 public class AlmacenamientoLibros {
 
-    private final String DIRECCION_FICHERO_LIBRO = "C:\\Users\\PEOPLE\\Desktop\\OneLibro\\src\\OneLibro\\Ficheros\\Libros.txt";
+    private final String DIRECCION_FICHERO_LIBRO = "C:\\Users\\PEOPLE\\Desktop\\OneLibro\\src\\OneLibro-C\\Ficheros\\Libros.txt";
 
     //Registrar clientees de las partidas jugadas
     public void almacenarLibros(Libro_Interface librosDisponibles){

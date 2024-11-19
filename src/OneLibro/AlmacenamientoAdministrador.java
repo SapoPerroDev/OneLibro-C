@@ -8,7 +8,7 @@ import java.util.ArrayList;
 
 public class AlmacenamientoAdministrador {
 
-    private final String DIRECCION_FICHERO_ADMIN = "C:\\Users\\PEOPLE\\Desktop\\OneLibro\\src\\OneLibro\\Ficheros\\Administradores.txt";
+    private final String DIRECCION_FICHERO_ADMIN = "C:\\Users\\PEOPLE\\Desktop\\OneLibro-C\\src\\OneLibro\\Ficheros\\Administradores.txt";
 
     //Registrar clientees de las partidas jugadas
     public void almacenarAdministradores(Administrador admin){
