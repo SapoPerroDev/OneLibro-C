@@ -9,7 +9,7 @@ import OneLibro.models.Usuario;
 
 public class AlmacenamientoUsuario {
 
-    private final String DIRECCION_FICHERO_USUARIO = "C:\\Users\\PEOPLE\\Desktop\\OneLibro\\src\\OneLibro\\Ficheros\\Usuarios.txt";
+    private final String DIRECCION_FICHERO_USUARIO = "C:\\Users\\PEOPLE\\Desktop\\OneLibro-C\\src\\OneLibro\\Ficheros\\Usuarios.txt";
 
     public void almacenarUsuarios(Usuario usuario){
         ArrayList<Usuario> usuarios = new ArrayList<>();
