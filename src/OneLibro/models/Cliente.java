@@ -1,6 +1,7 @@
-package OneLibro;
+package OneLibro.models;
 
 import java.util.ArrayList;
+import OneLibro.data.AlmacenamientoLibros;
 import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
@@ -13,11 +14,11 @@ public class Cliente extends Usuario{
     public Cliente() {
     }
 
-
-    public Cliente(String nombre, String apellidos, String dni, int edad, String telefono, String email, String contrasena, String pais, String departamento, Beneficio beneficio) {
-        super(nombre, apellidos, dni, edad, telefono, email, contrasena, pais, departamento);
+    public Cliente(String nombre, String apellidos, String dni, int edad, String telefono, String email, String contrasena, String pais, String departamento, Beneficio beneficio, String estado) {
+        super("Cliente", nombre, apellidos, dni, edad, telefono, email, contrasena, pais, departamento, estado);
         this.beneficio = beneficio;
     }
+
 
     public Beneficio getBeneficio() {return this.beneficio;}
 
@@ -58,7 +59,7 @@ public class Cliente extends Usuario{
                                 + "\nEditorial: " + editorial 
                                 + "\nIdioma: " + idioma
                                 + "\nGenero: " + genero
-                                + "\nFecha de Publicaciòn: " + fecha_publicacion;
+                                + "\nFecha de Publicación: " + fecha_publicacion;
 
                     librosDisponibles.add(audio_libro);
                 }
@@ -88,7 +89,7 @@ public class Cliente extends Usuario{
                                 + "\nEditorial: " + editorial 
                                 + "\nIdioma: " + idioma
                                 + "\nGenero: " + genero
-                                + "\nFecha de Publicaciòn: " + fecha_publicacion;
+                                + "\nFecha de Publicaciónn: " + fecha_publicacion;
 
                     librosDisponibles.add(eBook);
                 }
@@ -134,7 +135,7 @@ public class Cliente extends Usuario{
         }
 
         System.out.println("\n\n\n*****************************************************"
-                         + "\n                   Libros disponibles" 
+                         + "\n                   Libros disponibles"
                          + "\n*****************************************************");
 
         if(librosDisponibles.size() < 1){
@@ -151,6 +152,6 @@ public class Cliente extends Usuario{
     }
     @Override
     public String toString() {
-        return getNombre() + "::" + getApellidos() + "::" + getDni()+ "::" + getEdad()+ "::" + getTelefono()+ "::" + getPais()+ "::" + getDepartamento()+ "::" + getEmail()+ "::" + getContrasena()+ "::" + getBeneficio();
+        return getTipo_usuario()+ "::" + getNombre() + "::" + getApellidos() + "::" + getDni()+ "::" + getEdad()+ "::" + getTelefono()+ "::" + getPais()+ "::" + getDepartamento()+ "::" + getEmail()+ "::" + getContrasena()+ "::" + getEstado()+ "::" + getBeneficio();
     }
 }

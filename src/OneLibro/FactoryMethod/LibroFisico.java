@@ -3,6 +3,8 @@ package OneLibro.FactoryMethod;
 import java.util.Scanner;
 
 public class LibroFisico implements Libro_Interface {
+
+    private Scanner scanner = new Scanner(System.in, "utf-8");
     
     //Atributos
     private String titulo;
@@ -93,9 +95,8 @@ public class LibroFisico implements Libro_Interface {
     }
 
     public void llenarDetalles() {
-        Scanner scanner = new Scanner(System.in, "utf-8");
 
-        System.out.println("\n\nCrear libro físico: ");
+        System.out.println("\n\nCrear libro físico");
 
         System.out.print("\nIngrese el título: ");
             this.titulo = scanner.nextLine();

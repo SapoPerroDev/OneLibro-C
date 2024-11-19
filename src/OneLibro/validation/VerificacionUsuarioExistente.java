@@ -1,29 +1,31 @@
-package OneLibro;
+package OneLibro.validation;
 
 import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
 
-public class VerificacionAdministradorExistente {
+import OneLibro.data.AlmacenamientoUsuario;
 
-    public boolean verificarAdministradorExistente(String d_n_i, String e_mail){
-        AlmacenamientoAdministrador admin = new AlmacenamientoAdministrador();
-        boolean existe_administrador = false;
+public class VerificacionUsuarioExistente {
+
+    public boolean verificarUsuarioExistente(String d_n_i, String e_mail){
+        AlmacenamientoUsuario usuario = new AlmacenamientoUsuario();
+        boolean existente_usuario = false;
 
         try {
-            BufferedReader lector = new BufferedReader(new FileReader(admin.getDIRECCION_FICHERO_ADMIN()));
+            BufferedReader lector = new BufferedReader(new FileReader(usuario.getDIRECCION_FICHERO_USUARIO()));
             String linea = "";
             while ((linea = lector.readLine()) != null) {
                 String [] bloques = linea.split("::");
-                if(bloques.length == 16){
+                if(bloques.length >= 11){
 
-                    String email = bloques[7];
-                    String dni = bloques[2];
+                    String email = bloques[8];
+                    String dni = bloques[3];
 
                     if(dni.equals(d_n_i) || email.equals(e_mail)){
-                        existe_administrador = true;
+                        existente_usuario = true;
                     }else{
-                        existe_administrador = false;
+                        existente_usuario = false;
                     }
                 }
             }
@@ -32,7 +34,7 @@ public class VerificacionAdministradorExistente {
         } catch (IOException e) {
             System.out.println("Error en la lectura del archivo: " + e.getMessage());
         }
-        return existe_administrador;
+        return existente_usuario;
     }
 
     public boolean validarEmail(String email) {
